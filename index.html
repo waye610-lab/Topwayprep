@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SHSAT Practice Test-1 · Topway Prep</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0A2A47; --muted:#5B7A92; --faint:#9FB3C4;
+  --surface:#F2F8FC; --card:#ffffff; --line:#E4EFF6; --line-strong:#CBDDE9;
+  --accent:#16A3DE; --accent-deep:#1488C4; --accent-soft:#EAF5FC;
+  --flag:#F2A900; --flag-soft:#FFF3D6;
+  --good:#1F8A5B; --bad:#D64545;
+  --radius:16px; --shadow:0 1px 2px rgba(10,42,71,.05),0 10px 34px rgba(10,42,71,.07);
+  --font:"Plus Jakarta Sans",system-ui,-apple-system,"Helvetica Neue",Arial,"PingFang SC","Microsoft YaHei",sans-serif;
+  --display:"Archivo","Plus Jakarta Sans",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{font-family:var(--font);color:var(--ink);background:var(--surface);-webkit-font-smoothing:antialiased;font-size:16px;line-height:1.5}
+button{font-family:inherit;cursor:pointer}
+img{max-width:100%;display:block}
+a{color:inherit}
+.screen{display:none}
+.screen.active{display:block}
+
+/* ---------- intro ---------- */
+.intro-wrap{max-width:880px;margin:0 auto;padding:40px 20px 80px}
+.eyebrow{font-family:var(--display);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:800}
+.intro-wrap h1{font-family:var(--display);font-size:34px;line-height:1.12;margin:.4em 0 .1em;letter-spacing:-.02em;font-weight:900}
+.intro-sub{color:var(--muted);margin:0 0 22px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+.intro-meta{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 22px}
+.chip{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:13px;color:var(--muted);white-space:nowrap}
+.chip b{color:var(--ink);font-weight:700}
+.cover-imgs{padding:10px;display:flex;flex-direction:column;gap:10px;margin-bottom:22px}
+.cover-imgs img{border-radius:10px;border:1px solid var(--line);width:100%}
+.opt-row{display:flex;align-items:center;gap:12px;padding:16px 18px;border-top:1px solid var(--line)}
+.opt-row:first-child{border-top:0}
+.opt-row .lab{flex:1}
+.opt-row .lab .t{font-weight:700}
+.opt-row .lab .d{font-size:13px;color:var(--muted)}
+.switch{position:relative;width:46px;height:27px;flex:0 0 auto}
+.switch input{opacity:0;width:0;height:0;position:absolute}
+.switch .track{position:absolute;inset:0;background:var(--line-strong);border-radius:999px;transition:.2s}
+.switch .knob{position:absolute;top:3px;left:3px;width:21px;height:21px;background:#fff;border-radius:50%;transition:.2s;box-shadow:0 1px 3px rgba(0,0,0,.25)}
+.switch input:checked+.track{background:var(--accent)}
+.switch input:checked+.track+.knob{transform:translateX(19px)}
+.btn{border:1px solid var(--line-strong);background:var(--card);color:var(--ink);padding:11px 18px;border-radius:11px;font-size:15px;font-weight:700;transition:.15s;white-space:nowrap}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn:active{transform:translateY(1px)}
+.btn:disabled{opacity:.5;cursor:default}
+.btn-primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-deep);border-color:var(--accent-deep);color:#fff}
+.btn-gold{background:#FFC629;border-color:#FFC629;color:#0A2A47;box-shadow:0 8px 20px rgba(255,198,41,.45)}
+.btn-gold:hover{background:#F2A900;border-color:#F2A900;color:#0A2A47}
+.btn-lg{padding:14px 26px;font-size:16px}
+.btn-ghost{background:transparent;border-color:transparent;color:var(--muted)}
+.btn-ghost:hover{color:var(--accent)}
+.start-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:8px}
+.note{font-size:13px;color:var(--faint);margin-top:14px;line-height:1.6}
+.note b{color:var(--muted)}
+
+/* ---------- exam ---------- */
+.topbar{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.94);backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:14px;padding:10px 16px}
+.topbar .tlogo{width:34px;height:34px;border-radius:9px;background:var(--accent);display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.topbar .brand{font-family:var(--display);font-weight:800;letter-spacing:-.01em;white-space:nowrap}
+.topbar .brand small{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);font-weight:700}
+.seg{display:flex;background:var(--surface);border-radius:11px;padding:3px;gap:2px}
+.seg button{border:0;background:transparent;color:var(--muted);font-weight:700;font-size:13px;padding:6px 12px;border-radius:8px;white-space:nowrap}
+.seg button.on{background:var(--card);color:var(--accent);box-shadow:0 1px 2px rgba(0,0,0,.06)}
+.spacer{flex:1}
+.timer{font-weight:800;font-size:15px;padding:6px 12px;border-radius:9px;background:var(--surface);color:var(--ink)}
+.timer.warn{background:var(--flag-soft);color:var(--flag)}
+.timer.hide{display:none}
+.progress-mini{font-size:13px;color:var(--muted);white-space:nowrap}
+.progress-mini b{color:var(--ink)}
+.icon-btn{border:1px solid var(--line);background:var(--card);border-radius:9px;width:38px;height:38px;display:none;align-items:center;justify-content:center;color:var(--ink)}
+
+.layout{display:grid;grid-template-columns:240px 1fr;max-width:1180px;margin:0 auto;align-items:start}
+.rail{position:sticky;top:59px;align-self:start;height:calc(100vh - 59px);overflow:auto;border-right:1px solid var(--line);padding:18px 14px 40px}
+.rail h3{font-family:var(--display);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin:18px 6px 8px;font-weight:800}
+.rail h3:first-child{margin-top:0}
+.grid-nav{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
+.cell{aspect-ratio:1;border:1.5px solid var(--line-strong);background:var(--card);border-radius:9px;font-size:13px;font-weight:700;color:var(--muted);position:relative;display:flex;align-items:center;justify-content:center}
+.cell:hover{border-color:var(--accent)}
+.cell.answered{background:var(--accent);border-color:var(--accent);color:#fff}
+.cell.current{box-shadow:0 0 0 3px var(--accent-soft);border-color:var(--accent)}
+.cell.flagged::after{content:"";position:absolute;top:-3px;right:-3px;width:9px;height:9px;border-radius:50%;background:var(--flag);border:2px solid var(--card)}
+.legend{display:flex;flex-wrap:wrap;gap:10px 14px;margin:16px 6px 0;font-size:12px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.dot{width:12px;height:12px;border-radius:4px;border:1.5px solid var(--line-strong);display:inline-block}
+.dot.a{background:var(--accent);border-color:var(--accent)}
+.dot.f{position:relative}
+.dot.f::after{content:"";position:absolute;top:-4px;right:-4px;width:8px;height:8px;border-radius:50%;background:var(--flag);border:1.5px solid var(--card)}
+
+.main{padding:24px 24px 120px;min-width:0;max-width:1040px}
+.q-head{display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+.q-eyebrow{font-family:var(--display);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:800}
+.q-num{font-family:var(--display);font-size:22px;font-weight:900;letter-spacing:-.01em}
+.q-sub{color:var(--faint);font-size:13px}
+.q-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.q-imgwrap{padding:16px;background:#fff;min-height:220px;display:flex;align-items:center;justify-content:center}
+.q-imgwrap img{margin:0 auto;border-radius:6px;width:100%;max-width:1000px}
+.q-loading{min-height:200px;display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:center;color:var(--faint);font-size:14px;width:100%}
+.spin{width:30px;height:30px;border-radius:50%;border:3px solid var(--line);border-top-color:var(--accent);animation:sp .8s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+
+.answers{padding:14px 18px 20px;border-top:1px solid var(--line)}
+.a-label{font-family:var(--display);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);font-weight:800;margin:0 2px 12px}
+.choice-row{display:flex;gap:10px;flex-wrap:wrap}
+.choice{display:flex;align-items:center;justify-content:center;gap:10px;border:1.5px solid var(--line);background:var(--card);border-radius:12px;padding:13px 26px;transition:.12s;user-select:none}
+.choice:hover{border-color:var(--accent);background:#FBFDFE}
+.choice.sel{border-color:var(--accent);background:var(--accent-soft)}
+.choice .key{width:32px;height:32px;border-radius:50%;border:1.5px solid var(--line-strong);display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--muted)}
+.choice.sel .key{background:var(--accent);border-color:var(--accent);color:#fff}
+.gridin{margin-top:14px}
+.gridin label{display:block;font-size:12.5px;color:var(--muted);margin-bottom:6px;font-weight:600}
+.gridin input{width:100%;max-width:280px;padding:11px 14px;border:1.5px solid var(--line-strong);border-radius:10px;font-size:16px;font-family:inherit;font-weight:600}
+.gridin input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.gridin.sel input{border-color:var(--accent);background:var(--accent-soft)}
+.tq{width:100%;text-align:left}
+.passage{border:1px solid var(--line);border-radius:12px;background:#FBFDFE;margin-bottom:16px;overflow:hidden}
+.passage-h{padding:11px 16px;border-bottom:1px solid var(--line);font-family:var(--display);font-weight:800;font-size:14px;color:#0A2A47}
+.passage-h span{font-weight:600;font-size:12.5px;color:var(--muted)}
+.passage-body{padding:14px 16px;max-height:300px;overflow:auto;white-space:pre-line;font-size:14.5px;line-height:1.7;color:#274863}
+.qstem{font-size:16px;font-weight:600;color:#0A2A47;line-height:1.55;padding:2px}
+.choice-col{display:flex;flex-direction:column;gap:9px}
+.choice-text{justify-content:flex-start;text-align:left;width:100%;padding:13px 16px;gap:13px;align-items:flex-start}
+.choice-text .ktext-full{font-weight:500;color:#274863;font-size:15px;line-height:1.45}
+.choice-text.sel .ktext-full{color:#0A2A47}
+
+.q-actions{display:flex;align-items:center;gap:10px;margin-top:20px;flex-wrap:wrap}
+.flag-btn{border:1.5px solid var(--line-strong);background:var(--card);color:var(--muted);padding:11px 16px;border-radius:11px;font-weight:700;font-size:14px;display:inline-flex;gap:8px;align-items:center}
+.flag-btn:hover{border-color:var(--flag);color:var(--flag)}
+.flag-btn.on{background:var(--flag-soft);border-color:var(--flag);color:var(--flag)}
+
+/* review */
+.review-wrap{max-width:920px;margin:0 auto;padding:30px 22px 100px}
+.review-wrap h2{font-family:var(--display);font-size:28px;margin:.2em 0 .1em;letter-spacing:-.02em;font-weight:900}
+.summary-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0 26px}
+.scard{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow)}
+.scard .v{font-family:var(--display);font-size:30px;font-weight:900;letter-spacing:-.02em}
+.scard .l{font-size:13px;color:var(--muted);margin-top:2px}
+.scard.good .v{color:var(--good)} .scard.warn .v{color:var(--flag)} .scard.acc .v{color:var(--accent)}
+.rev-section h3{font-family:var(--display);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin:22px 4px 10px;font-weight:800}
+.rev-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(54px,1fr));gap:7px}
+.rev-cell{aspect-ratio:1;border:1.5px solid var(--line-strong);border-radius:10px;background:var(--card);font-weight:700;font-size:13px;color:var(--muted);display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;gap:1px}
+.rev-cell .pick{font-size:10px;color:var(--faint);font-weight:700}
+.rev-cell.answered{background:var(--accent-soft);border-color:var(--accent);color:var(--accent-deep)}
+.rev-cell.answered .pick{color:var(--accent)}
+.rev-cell.correct{background:#E7F7EE;border-color:var(--good);color:var(--good)}
+.rev-cell.wrong{background:#FDECEC;border-color:var(--bad);color:var(--bad)}
+.rev-cell.flagged::after{content:"";position:absolute;top:-3px;right:-3px;width:9px;height:9px;border-radius:50%;background:var(--flag);border:2px solid var(--card)}
+.review-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.footer-note{max-width:1180px;margin:0 auto;padding:0 24px 40px;color:var(--faint);font-size:12.5px;line-height:1.7}
+
+@media (max-width:860px){
+  .layout{grid-template-columns:1fr}
+  .icon-btn{display:flex}
+  .rail{position:fixed;top:0;left:0;height:100%;width:280px;background:var(--card);z-index:70;transform:translateX(-100%);transition:transform .25s;box-shadow:6px 0 30px rgba(10,42,71,.18);padding-top:16px}
+  .rail.open{transform:none}
+  .rail-back{position:fixed;inset:0;background:rgba(10,42,71,.4);z-index:65;opacity:0;pointer-events:none;transition:.2s}
+  .rail-back.open{opacity:1;pointer-events:auto}
+  .main{padding:18px 16px 120px}
+  .seg{display:none}
+  .topbar .brand small{display:none}
+}
+:focus-visible{outline:3px solid var(--accent-soft);outline-offset:2px}
+
+/* ---------- results ---------- */
+.res-wrap{max-width:680px;margin:0 auto;padding:40px 20px 64px}
+.res-card{background:#fff;border-radius:26px;box-shadow:0 30px 80px rgba(10,42,71,.18);overflow:hidden}
+.res-head{position:relative;background:linear-gradient(135deg,#0A2A47,#15406B);padding:40px 32px 52px;text-align:center;overflow:hidden;color:#fff}
+.res-badge{position:relative;display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;background:#1F8A5B;box-shadow:0 12px 30px rgba(31,138,91,.5);margin-bottom:16px;animation:resPop .5s ease both}
+@keyframes resPop{0%{transform:scale(.6);opacity:0}60%{transform:scale(1.08)}100%{transform:scale(1);opacity:1}}
+.res-eyebrow{position:relative;font-family:var(--display);font-weight:800;font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:#FFC629;margin-bottom:8px}
+.res-h1{position:relative;font-family:var(--display);font-weight:900;font-size:28px;letter-spacing:-.6px;margin:0 0 6px}
+.res-sub{position:relative;font-size:14px;color:#9fc4e0;margin:0;font-weight:500}
+.res-blob{position:absolute;border-radius:50%}
+.res-ringwrap{display:flex;flex-direction:column;align-items:center;margin-top:-32px}
+.res-ringcirc{position:relative;width:180px;height:180px;background:#fff;border-radius:50%;box-shadow:0 16px 40px rgba(10,42,71,.14);display:flex;align-items:center;justify-content:center}
+.res-ringnum{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.res-band{margin-top:14px;display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:13.5px;padding:7px 16px;border-radius:999px}
+.res-body{padding:28px 32px 34px}
+.res-secgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px}
+.res-sec{border-radius:16px;padding:18px 18px 16px;border:1px solid var(--line)}
+.res-bar{height:8px;border-radius:99px;background:#EEF4F9;overflow:hidden}
+.res-bar>i{display:block;height:100%;border-radius:99px;transition:width .7s ease}
+.res-stats{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:22px}
+.res-stat{padding:16px 12px;text-align:center}
+.res-stat+.res-stat{border-left:1px solid #EEF4F9}
+.res-msg{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin-bottom:22px;display:flex;gap:14px;align-items:flex-start;font-size:14.5px;line-height:1.6;color:#3D5970;font-weight:500}
+.res-foot{text-align:center;font-size:12.5px;color:#7e98ab;margin:18px 0 0;font-weight:500}
+</style>
+</head>
+<body>
+
+<!-- ============ INTRO ============ -->
+<section id="introScreen" class="screen active">
+  <div class="intro-wrap">
+    <div class="eyebrow">NYC Specialized High Schools Admissions Test</div>
+    <h1>SHSAT Practice Test-1</h1>
+    <p class="intro-sub">Grade 8 · Online practice · Progress saved on this device</p>
+    <div class="intro-meta">
+      <span class="chip"><b>100</b> questions</span>
+      <span class="chip">ELA <b>1–50</b></span>
+      <span class="chip">Math <b>51–100</b></span>
+      <span class="chip"><b>180</b> min suggested</span>
+    </div>
+
+    <!-- ===== Test directions — Topway styled ===== -->
+    <div class="card" style="overflow:hidden;margin-bottom:16px;">
+      <div style="background:linear-gradient(135deg,#0A2A47,#15406B);color:#fff;padding:26px 28px;text-align:center;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:-40px;right:-30px;width:140px;height:140px;border-radius:50%;background:rgba(22,163,222,.16);"></div>
+        <div style="position:relative;display:inline-flex;align-items:center;justify-content:center;width:50px;height:50px;border-radius:14px;background:rgba(255,255,255,.1);margin-bottom:14px;">
+          <svg width="32" height="32" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M41 48 L79 48 L79 63 Q60 77 41 63 Z" fill="#0E80BD"></path>
+            <path d="M60 25 L99 42 L60 59 L21 42 Z" fill="#fff"></path>
+            <circle cx="60" cy="42" r="4" fill="#0A2A47"></circle>
+            <path d="M60 42 Q91 44 91 55 L91 71" stroke="#FFC629" stroke-width="3.8" stroke-linecap="round" fill="none"></path>
+            <circle cx="91" cy="75" r="5" fill="#FFC629"></circle>
+            <path d="M30 91 Q60 107 90 91" stroke="#FFC629" stroke-width="7" stroke-linecap="round" fill="none"></path>
+          </svg>
+        </div>
+        <div style="position:relative;font-family:var(--display);font-weight:800;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#FFC629;margin-bottom:8px;"><span style="font-family:'Noto Sans SC',sans-serif;font-weight:900;">權威教育</span> · TOPWAY PREP</div>
+        <div style="position:relative;font-family:var(--display);font-weight:900;font-size:22px;letter-spacing:-.5px;line-height:1.15;">Specialized High Schools Admissions Test</div>
+        <div style="position:relative;font-size:14px;color:#9fc4e0;margin-top:6px;font-weight:600;">Grade 8 · SHSAT Practice Test-1</div>
+      </div>
+      <div style="padding:24px 28px;">
+        <div style="font-family:var(--display);font-weight:800;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#16A3DE;margin-bottom:10px;">General Directions</div>
+        <p style="margin:0 0 18px;font-size:15px;color:#3D5970;line-height:1.6;">This test has <b style="color:#0A2A47;">100 questions</b> across two subjects — English Language Arts and Mathematics.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <div style="border:1px solid var(--line);border-radius:12px;padding:16px;background:#F7FAFD;">
+            <div style="font-family:var(--display);font-weight:800;font-size:12px;letter-spacing:.5px;color:#16A3DE;">PART 1 · ELA</div>
+            <div style="font-family:var(--display);font-weight:900;font-size:22px;color:#0A2A47;margin-top:5px;line-height:1;">50<span style="font-size:13px;color:var(--muted);font-weight:700;"> questions</span></div>
+            <div style="font-size:13px;color:var(--muted);margin-top:4px;">Questions 1–50</div>
+          </div>
+          <div style="border:1px solid #F4E6C4;border-radius:12px;padding:16px;background:#FFFBF0;">
+            <div style="font-family:var(--display);font-weight:800;font-size:12px;letter-spacing:.5px;color:#F2A900;">PART 2 · MATH</div>
+            <div style="font-family:var(--display);font-weight:900;font-size:22px;color:#0A2A47;margin-top:5px;line-height:1;">50<span style="font-size:13px;color:var(--muted);font-weight:700;"> questions</span></div>
+            <div style="font-size:13px;color:var(--muted);margin-top:4px;">Questions 51–100</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== Planning your time — caring Topway voice ===== -->
+    <div class="card" style="padding:24px 28px;margin-bottom:22px;">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+        <span style="font-family:var(--display);font-weight:800;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#16A3DE;">Planning Your Time</span>
+        <span style="font-family:'Noto Sans SC',sans-serif;font-weight:700;font-size:13px;color:#9FB3C4;">合理安排時間</span>
+      </div>
+      <p style="margin:0 0 16px;font-size:14.5px;color:#5B7A92;line-height:1.65;">Take a breath — you&rsquo;ve prepared for this. A few gentle reminders to help you do your best:</p>
+      <ul style="margin:0;padding-left:20px;color:#3D5970;font-size:14.5px;line-height:1.7;">
+        <li style="margin-bottom:11px;">With the timer on, you&rsquo;ll have <b style="color:#0A2A47;">180 minutes</b> — the same as the real test. Think of it as a chance to get comfortable with the pace.</li>
+        <li style="margin-bottom:11px;">This practice mirrors the computer-adaptive test (CAT): for Math and stand-alone revising &amp; editing questions, you can&rsquo;t go back once you move on, so settle on your answer before advancing.</li>
+        <li style="margin-bottom:11px;">Within a single reading or revising &amp; editing <b>passage set</b>, you can return and change answers — but once you leave the last question in that set, it locks.</li>
+        <li style="margin-bottom:11px;">Don&rsquo;t dwell too long on any one question. Trust your preparation — when you&rsquo;re unsure, choose your best answer and keep moving forward.</li>
+        <li>Finish the subject you started before moving to the next. Once you submit a subject area, you won&rsquo;t be able to return to it.</li>
+      </ul>
+    </div>
+
+    <div class="card" style="margin-bottom:22px">
+      <div class="opt-row">
+        <div class="lab"><div class="t">Enable 180-minute timer</div><div class="d">Mimics real test pacing. Off = untimed practice.</div></div>
+        <label class="switch"><input type="checkbox" id="timerToggle"><span class="track"></span><span class="knob"></span></label>
+      </div>
+      <div class="opt-row">
+        <div class="lab"><div class="t">Auto-advance after answering</div><div class="d">Off = stay on the current question and press Next yourself.</div></div>
+        <label class="switch"><input type="checkbox" id="autoAdvToggle"><span class="track"></span><span class="knob"></span></label>
+      </div>
+    </div>
+
+    <div class="start-row">
+      <button class="btn btn-gold btn-lg" id="startBtn">Start test</button>
+      <button class="btn btn-lg" id="resumeBtn" style="display:none">Resume</button>
+      <button class="btn-ghost btn" id="clearBtn" style="display:none">Clear saved progress</button>
+    </div>
+    <p class="note"><b>Progress saves automatically on this device.</b> Keyboard: A/B/C/D to answer · ←/→ to move · F to flag.</p>
+  </div>
+</section>
+
+<!-- ============ EXAM ============ -->
+<section id="examScreen" class="screen">
+  <div class="topbar">
+    <button class="icon-btn" id="railToggle" aria-label="Question navigator">☰</button>
+    <div class="tlogo">
+      <svg width="22" height="22" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M41 48 L79 48 L79 63 Q60 77 41 63 Z" fill="#0E80BD"></path>
+        <path d="M60 25 L99 42 L60 59 L21 42 Z" fill="#fff"></path>
+        <circle cx="60" cy="42" r="4" fill="#16A3DE"></circle>
+        <path d="M60 42 Q91 44 91 55 L91 71" stroke="#FFC629" stroke-width="3.8" stroke-linecap="round" fill="none"></path>
+        <circle cx="91" cy="75" r="5" fill="#FFC629"></circle>
+        <path d="M30 91 Q60 107 90 91" stroke="#FFC629" stroke-width="7" stroke-linecap="round" fill="none"></path>
+      </svg>
+    </div>
+    <div class="brand">SHSAT Test-1<small>Topway Practice</small></div>
+    <div class="seg" id="sectionSeg">
+      <button data-sec="Reading" class="on">ELA 1–50</button>
+      <button data-sec="Math">Math 51–100</button>
+    </div>
+    <div class="spacer"></div>
+    <div class="progress-mini">Answered <b id="answeredCount">0</b>/100</div>
+    <div class="timer hide" id="timer">180:00</div>
+    <button class="btn btn-primary" id="toReviewBtn">Review &amp; submit</button>
+  </div>
+
+  <div class="rail-back" id="railBack"></div>
+  <div class="layout">
+    <aside class="rail" id="rail"></aside>
+    <main class="main">
+      <div class="q-head">
+        <span class="q-eyebrow" id="qEyebrow">ELA · Reading</span>
+        <span class="q-num" id="qNum">Question 1</span>
+        <span class="q-sub" id="qSub"></span>
+      </div>
+      <div class="q-card">
+        <div class="q-imgwrap" id="qImgWrap"><div class="q-loading"><div class="spin"></div>Loading…</div></div>
+        <div class="answers" id="answers"></div>
+      </div>
+      <div class="q-actions">
+        <button class="btn" id="prevBtn">← Previous</button>
+        <button class="flag-btn" id="flagBtn"><span>⚑</span><span>Flag for review</span></button>
+        <div class="spacer"></div>
+        <button class="btn btn-primary" id="nextBtn">Next →</button>
+      </div>
+    </main>
+  </div>
+  <div class="footer-note">Progress is saved in this browser (localStorage); clearing browser data erases it.</div>
+</section>
+
+<!-- ============ REVIEW ============ -->
+<section id="reviewScreen" class="screen">
+  <div class="review-wrap">
+    <div class="eyebrow">Review &amp; submit</div>
+    <h2 id="reviewTitle">Review your answers</h2>
+    <p class="intro-sub" id="reviewSub"></p>
+    <div class="summary-cards" id="summaryCards"></div>
+    <div id="reviewSections"></div>
+    <div class="review-actions">
+      <button class="btn" id="backToExamBtn">← Back to test</button>
+      <button class="btn btn-gold" id="submitBtn">Submit &amp; see results</button>
+    </div>
+    <p class="note" id="reviewNote"></p>
+  </div>
+</section>
+
+<!-- ============ RESULTS ============ -->
+<section id="resultsScreen" class="screen">
+  <div class="res-wrap">
+    <div class="res-card">
+      <div class="res-head">
+        <div class="res-blob" style="top:-50px;right:-40px;width:190px;height:190px;background:rgba(22,163,222,.18)"></div>
+        <div class="res-blob" style="bottom:-70px;left:-50px;width:190px;height:190px;background:rgba(255,198,41,.10)"></div>
+        <div class="res-badge"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+        <div class="res-eyebrow">Test Submitted · 已提交</div>
+        <h1 class="res-h1" id="resTitle">Test submitted!</h1>
+        <p class="res-sub" id="resSub">SHSAT Practice Test-1 · saved on this device</p>
+      </div>
+      <div class="res-ringwrap">
+        <div class="res-ringcirc">
+          <svg width="150" height="150" viewBox="0 0 160 160" style="transform:rotate(-90deg)">
+            <circle cx="80" cy="80" r="68" fill="none" stroke="#EAF1F7" stroke-width="14"></circle>
+            <circle id="resRing" cx="80" cy="80" r="68" fill="none" stroke="#16A3DE" stroke-width="14" stroke-linecap="round" stroke-dasharray="0 427.3"></circle>
+          </svg>
+          <div class="res-ringnum">
+            <div style="font-family:var(--display);font-weight:900;font-size:44px;line-height:1;letter-spacing:-1.5px;color:var(--ink)" id="resPct">—</div>
+            <div style="font-size:13px;font-weight:700;color:var(--muted);margin-top:4px" id="resPctSub"></div>
+          </div>
+        </div>
+        <div class="res-band" id="resBand"></div>
+      </div>
+      <div class="res-body">
+        <div class="res-secgrid">
+          <div class="res-sec" style="background:#F7FAFD">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px"><span style="font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:.5px;text-transform:uppercase;color:var(--accent)">ELA · Reading</span><span style="font-size:12px;font-weight:700;color:var(--faint)">英文</span></div>
+            <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:10px"><span style="font-family:var(--display);font-weight:900;font-size:28px;letter-spacing:-1px;color:var(--ink)" id="resEla">—</span><span style="font-size:15px;font-weight:700;color:var(--faint)" id="resElaTot">/ 50</span></div>
+            <div class="res-bar"><i id="resElaBar" style="width:0;background:var(--accent)"></i></div>
+          </div>
+          <div class="res-sec" style="background:#FFFBF0;border-color:#F4E6C4">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px"><span style="font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:.5px;text-transform:uppercase;color:var(--flag)">Mathematics</span><span style="font-size:12px;font-weight:700;color:var(--faint)">數學</span></div>
+            <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:10px"><span style="font-family:var(--display);font-weight:900;font-size:28px;letter-spacing:-1px;color:var(--ink)" id="resMath">—</span><span style="font-size:15px;font-weight:700;color:var(--faint)" id="resMathTot">/ 50</span></div>
+            <div class="res-bar"><i id="resMathBar" style="width:0;background:var(--flag)"></i></div>
+          </div>
+        </div>
+        <div class="res-stats">
+          <div class="res-stat"><div style="font-family:var(--display);font-weight:900;font-size:20px;color:var(--ink)" id="resTime">—</div><div style="font-size:12px;color:var(--muted);font-weight:600;margin-top:3px">Time used</div></div>
+          <div class="res-stat"><div style="font-family:var(--display);font-weight:900;font-size:20px;color:var(--ink)" id="resAnswered">—</div><div style="font-size:12px;color:var(--muted);font-weight:600;margin-top:3px">Answered</div></div>
+          <div class="res-stat"><div style="font-family:var(--display);font-weight:900;font-size:20px;color:var(--ink)" id="resFlagged">—</div><div style="font-size:12px;color:var(--muted);font-weight:600;margin-top:3px">Flagged</div></div>
+        </div>
+        <div class="res-msg"><span style="flex:none;width:36px;height:36px;border-radius:10px;background:#EAF5FC;display:flex;align-items:center;justify-content:center;font-size:18px">💡</span><p style="margin:0" id="resMsg"></p></div>
+        <div style="display:flex;flex-direction:column;gap:11px">
+          <button class="btn btn-gold" id="resReviewBtn" style="width:100%;padding:16px;font-size:16px">Review my answers →</button>
+          <div style="display:flex;gap:11px">
+            <button class="btn" id="resRetakeBtn" style="flex:1">Retake test</button>
+            <button class="btn" id="resHomeBtn" style="flex:1">More practice tests</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="res-foot">A score report is saved to this device · <span style="font-family:'Noto Sans SC',sans-serif">成績已保存</span></p>
+  </div>
+</section>
+
+<script src="exam-text-data.js"></script>
+<script>
+/* ============================================================
+   ANSWER_KEY: fill to enable scoring, e.g. { "1":"B", "51":"C", "100":"31/12" }.
+   Multiple choice = A/B/C/D; grid-in = the typed value as a string.
+   Question images live in the exam-img/ folder (q1.jpg … q100.jpg).
+   ============================================================ */
+var ANSWER_KEY = {};
+
+var TOTAL=100, LETTERS=["A","B","C","D"], STORE="topway_shsat_test1_v3";
+var ETXT=(window.EXAM_TEXT)||{passages:{},ela:[]};
+var passages=ETXT.passages;
+function etFor(n){ if(n>50)return null; for(var i=0;i<ETXT.ela.length;i++){ if(ETXT.ela[i].n===n) return ETXT.ela[i]; } return null; }
+function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+var Q=[]; for(var n=1;n<=TOTAL;n++){ Q.push({ n:n, section:(n<=50?"Reading":"Math"), img:"exam-img/q"+n+".jpg", et:etFor(n) }); }
+
+var state=loadState();
+function freshState(){ return { started:false, idx:0, answers:{}, flags:{}, section:"Reading", timerOn:false, autoAdv:false, remaining:180*60, submitted:false, startedAt:null }; }
+function loadState(){ try{var s=JSON.parse(localStorage.getItem(STORE)); if(s&&s.answers) return Object.assign(freshState(),s);}catch(e){} return freshState(); }
+var saveTimer=null;
+function save(){ clearTimeout(saveTimer); saveTimer=setTimeout(function(){ try{localStorage.setItem(STORE,JSON.stringify(state));}catch(e){} },120); }
+
+var $=function(id){return document.getElementById(id);};
+var screens={intro:$("introScreen"),exam:$("examScreen"),review:$("reviewScreen"),results:$("resultsScreen")};
+function show(name){ for(var k in screens) screens[k].classList.toggle("active",k===name); window.scrollTo(0,0); }
+function hasAnswer(n){ var a=state.answers[n]; return a!==undefined&&a!==null&&a!==""; }
+function isLetter(v){ return LETTERS.indexOf(v)>=0; }
+function answeredCount(){ var c=0; for(var n=1;n<=TOTAL;n++) if(hasAnswer(n)) c++; return c; }
+
+/* intro */
+(function initIntro(){
+  var hasProgress = Object.keys(state.answers).length>0 || state.started;
+  if(hasProgress){ $("resumeBtn").style.display=""; $("clearBtn").style.display=""; }
+  $("timerToggle").checked=state.timerOn; $("autoAdvToggle").checked=state.autoAdv;
+  $("timerToggle").onchange=function(e){ state.timerOn=e.target.checked; save(); };
+  $("autoAdvToggle").onchange=function(e){ state.autoAdv=e.target.checked; save(); };
+  $("startBtn").onclick=function(){ state=freshState(); state.timerOn=$("timerToggle").checked; state.autoAdv=$("autoAdvToggle").checked; state.started=true; save(); enterExam(); };
+  $("resumeBtn").onclick=function(){ state.started=true; save(); enterExam(); };
+  $("clearBtn").onclick=function(){ if(confirm("Clear all saved answers on this device? This cannot be undone.")){ localStorage.removeItem(STORE); state=freshState(); location.reload(); } };
+})();
+
+/* exam */
+function sectionRange(sec){ var a=Q.filter(function(q){return q.section===sec;}); return [a[0].n,a[a.length-1].n]; }
+function enterExam(){ if(!state.startedAt)state.startedAt=Date.now(); show("exam"); buildRail(); renderTimer(); if(state.idx==null)state.idx=0; goTo(state.idx,false); }
+function buildRail(){
+  var rail=$("rail"); rail.innerHTML="";
+  [["Reading","ELA · Reading (1–50)"],["Math","Mathematics (51–100)"]].forEach(function(sec){
+    var h=document.createElement("h3"); h.textContent=sec[1]; rail.appendChild(h);
+    var g=document.createElement("div"); g.className="grid-nav";
+    Q.filter(function(q){return q.section===sec[0];}).forEach(function(q){
+      var c=document.createElement("button"); c.className="cell"; c.textContent=q.n; c.dataset.n=q.n;
+      c.onclick=function(){ goTo(q.n-1); closeRail(); }; g.appendChild(c);
+    });
+    rail.appendChild(g);
+  });
+  var lg=document.createElement("div"); lg.className="legend";
+  lg.innerHTML='<span><i class="dot a"></i>Answered</span><span><i class="dot"></i>Unanswered</span><span><i class="dot f"></i>Flagged</span>';
+  rail.appendChild(lg); refreshRail();
+}
+function refreshRail(){
+  document.querySelectorAll(".cell").forEach(function(c){ var n=+c.dataset.n;
+    c.classList.toggle("answered",hasAnswer(n)); c.classList.toggle("flagged",!!state.flags[n]); c.classList.toggle("current",n===state.idx+1); });
+  $("answeredCount").textContent=answeredCount();
+}
+function goTo(i,doSave){
+  if(doSave===undefined)doSave=true;
+  i=Math.max(0,Math.min(Q.length-1,i)); state.idx=i; var q=Q[i];
+  if(q.section!==state.section){ state.section=q.section; syncSeg(); }
+  renderQuestion(q); refreshRail(); if(doSave)save();
+}
+function syncSeg(){ document.querySelectorAll("#sectionSeg button").forEach(function(b){ b.classList.toggle("on",b.dataset.sec===state.section); }); }
+
+var imgToken=0;
+function renderQuestion(q){
+  var et=q.et, textMode=(q.section==="Reading"&&et&&et.type!=="image");
+  $("qEyebrow").textContent = q.section==="Reading"?"ELA · Reading":"Mathematics";
+  $("qNum").textContent="Question "+q.n;
+  $("qSub").textContent = (textMode&&passages[et.set])?passages[et.set].title:(q.section==="Reading"?"Read the passage, then answer.":"Choose the best answer (or grid in a number).");
+  buildAnswers(q);
+  $("flagBtn").classList.toggle("on",!!state.flags[q.n]);
+  $("prevBtn").disabled=state.idx===0;
+  $("nextBtn").textContent = state.idx===Q.length-1?"Finish →":"Next →";
+  var wrap=$("qImgWrap"); var tok=++imgToken;
+  if(textMode){
+    wrap.style.display="block";
+    var p=passages[et.set], ph="";
+    if(p){ ph='<div class="passage"><div class="passage-h">'+esc(p.title)+(p.author?' <span>'+esc(p.author)+'</span>':'')+'</div><div class="passage-body">'+esc(p.text)+'</div></div>'; }
+    wrap.innerHTML='<div class="tq">'+ph+'<div class="qstem">'+esc(et.stem)+'</div></div>';
+    return;
+  }
+  wrap.style.display="flex";
+  wrap.innerHTML='<div class="q-loading"><div class="spin"></div>Loading…</div>';
+  var img=new Image(); img.alt="Question "+q.n;
+  img.onload=function(){ if(tok===imgToken){ wrap.innerHTML=""; wrap.appendChild(img); } };
+  img.onerror=function(){ if(tok===imgToken) wrap.innerHTML='<div class="q-loading" style="color:var(--bad)">Could not load '+q.img+'</div>'; };
+  img.src=q.img;
+  [1,2,-1].forEach(function(d){ var j=state.idx+d; if(j>=0&&j<Q.length){ var nb=Q[j]; if(!(nb.section==="Reading"&&nb.et&&nb.et.type!=="image")){ var pr=new Image(); pr.src=nb.img; } } });
+}
+function isSel(n,k,multi){ var c=state.answers[n]; if(c===undefined||c==="")return false; return multi?String(c).split(",").indexOf(k)>=0:c===k; }
+function buildAnswers(q){
+  var box=$("answers"); box.innerHTML="";
+  var et=q.et, textMode=(q.section==="Reading"&&et&&et.type!=="image"&&et.choices.length), multi=(et&&et.type==="multi");
+  var lab=document.createElement("div"); lab.className="a-label"; lab.textContent=multi?"Select the TWO best answers":"Select your answer"; box.appendChild(lab);
+  if(textMode){
+    var col=document.createElement("div"); col.className="choice-col";
+    et.choices.forEach(function(c){
+      var sel=isSel(q.n,c.k,multi);
+      var d=document.createElement("button"); d.className="choice choice-text"+(sel?" sel":"");
+      d.innerHTML='<span class="key">'+c.k+'</span><span class="ktext-full">'+esc(c.text)+'</span>';
+      d.onclick=function(){ setAnswer(q.n,c.k); }; col.appendChild(d);
+    });
+    box.appendChild(col); return;
+  }
+  var row=document.createElement("div"); row.className="choice-row";
+  LETTERS.forEach(function(L){
+    var sel=state.answers[q.n]===L;
+    var d=document.createElement("button"); d.className="choice"+(sel?" sel":"");
+    d.innerHTML='<span class="key">'+L+'</span>';
+    d.onclick=function(){ setAnswer(q.n,L); }; row.appendChild(d);
+  });
+  box.appendChild(row);
+  if(q.section==="Math"){
+    var gi=document.createElement("div"); gi.className="gridin";
+    var cur=state.answers[q.n];
+    var hasText = cur!==undefined && !isLetter(cur) && cur!=="";
+    if(hasText) gi.classList.add("sel");
+    gi.innerHTML='<label>Grid-in answer (if the question asks you to grid a number)</label>';
+    var inp=document.createElement("input"); inp.type="text"; inp.placeholder="e.g. 3/4 or 12.5";
+    inp.value = hasText ? cur : "";
+    inp.oninput=function(){ var v=inp.value.trim(); if(v===""){ if(!isLetter(state.answers[q.n])) delete state.answers[q.n]; } else { state.answers[q.n]=v; } save(); refreshRail(); gi.classList.toggle("sel",v!==""); document.querySelectorAll("#answers .choice").forEach(function(c){c.classList.remove("sel");}); };
+    gi.appendChild(inp); box.appendChild(gi);
+  }
+}
+function setAnswer(n,k){
+  var q=Q[n-1], multi=(q.et&&q.et.type==="multi");
+  if(multi){
+    var cur=state.answers[n], arr=cur?String(cur).split(","):[]; var idx=arr.indexOf(k);
+    if(idx>=0) arr.splice(idx,1); else { if(arr.length>=2) arr.shift(); arr.push(k); }
+    if(arr.length) state.answers[n]=arr.sort().join(","); else delete state.answers[n];
+  } else {
+    if(state.answers[n]===k) delete state.answers[n]; else state.answers[n]=k;
+  }
+  save(); buildAnswers(q); refreshRail();
+  if(!multi && state.autoAdv && state.answers[n] && state.idx<Q.length-1){ setTimeout(function(){goTo(state.idx+1);},150); }
+}
+
+$("prevBtn").onclick=function(){ goTo(state.idx-1); };
+$("nextBtn").onclick=function(){ if(state.idx===Q.length-1) toReview(); else goTo(state.idx+1); };
+$("flagBtn").onclick=function(){ var n=state.idx+1; state.flags[n]=!state.flags[n]; if(!state.flags[n])delete state.flags[n]; $("flagBtn").classList.toggle("on",!!state.flags[n]); refreshRail(); save(); };
+document.querySelectorAll("#sectionSeg button").forEach(function(b){ b.onclick=function(){ var r=sectionRange(b.dataset.sec); goTo(r[0]-1); }; });
+
+function closeRail(){ $("rail").classList.remove("open"); $("railBack").classList.remove("open"); }
+$("railToggle").onclick=function(){ $("rail").classList.add("open"); $("railBack").classList.add("open"); };
+$("railBack").onclick=closeRail;
+
+document.addEventListener("keydown",function(e){
+  if(!screens.exam.classList.contains("active"))return;
+  if(e.target.tagName==="INPUT")return;
+  var k=(e.key||"").toUpperCase();
+  if(LETTERS.indexOf(k)>=0){ setAnswer(state.idx+1,k); }
+  else if(e.key==="ArrowRight"){ goTo(state.idx+1); }
+  else if(e.key==="ArrowLeft"){ goTo(state.idx-1); }
+  else if(k==="F"){ $("flagBtn").click(); }
+});
+
+/* timer */
+var tick=null;
+function renderTimer(){
+  var t=$("timer");
+  if(!state.timerOn){ t.classList.add("hide"); return; }
+  t.classList.remove("hide"); updateTimerLabel();
+  if(tick)clearInterval(tick);
+  tick=setInterval(function(){ if(!screens.exam.classList.contains("active"))return;
+    state.remaining=Math.max(0,state.remaining-1); updateTimerLabel();
+    if(state.remaining%5===0)save(); if(state.remaining<=0){ clearInterval(tick); toReview(true); } },1000);
+}
+function updateTimerLabel(){ var m=Math.floor(state.remaining/60), s=state.remaining%60; var t=$("timer"); t.textContent=String(m).padStart(2,"0")+":"+String(s).padStart(2,"0"); t.classList.toggle("warn",state.remaining<=300); }
+
+/* review */
+$("toReviewBtn").onclick=function(){ toReview(false); };
+function toReview(timeUp){ show("review"); buildReview(false); if(timeUp){ $("reviewTitle").textContent="Time’s up — please submit"; } }
+$("backToExamBtn").onclick=function(){ show("exam"); goTo(state.idx,false); };
+function keyCount(){ return Object.keys(ANSWER_KEY).length; }
+function norm(v){ return String(v).trim().toUpperCase().replace(/\s+/g,""); }
+function isCorrect(n){ var k=ANSWER_KEY[n]; if(k===undefined)return null; var a=state.answers[n]; if(a===undefined||a==="")return false; return norm(a)===norm(k); }
+function buildReview(showResult){
+  var answered=answeredCount(), flagged=Object.keys(state.flags).length, unanswered=TOTAL-answered;
+  function card(v,l,cls){return '<div class="scard '+(cls||"")+'"><div class="v">'+v+'</div><div class="l">'+l+'</div></div>';}
+  var html=card(answered,"Answered","acc")+card(unanswered,"Unanswered",unanswered?"warn":"")+card(flagged,"Flagged",flagged?"warn":"");
+  if(showResult&&keyCount()>0){ var correct=0,scored=0; for(var n=1;n<=TOTAL;n++){ var r=isCorrect(n); if(r!==null){scored++;if(r)correct++;} }
+    html=card(correct+" / "+scored,"Correct","good")+card(scored?Math.round(correct/scored*100)+"%":"—","Accuracy","acc")+html; }
+  $("summaryCards").innerHTML=html;
+  $("reviewSub").textContent=showResult?(keyCount()>0?"Green = correct, red = incorrect.":"All your answers have been recorded."):"Tap any number to jump back and edit. Submit when ready.";
+  var sections=$("reviewSections"); sections.innerHTML="";
+  [["ELA · Reading (1–50)",1,50],["Mathematics (51–100)",51,100]].forEach(function(sec){
+    var wrap=document.createElement("div"); wrap.className="rev-section";
+    var h=document.createElement("h3"); h.textContent=sec[0]; wrap.appendChild(h);
+    var g=document.createElement("div"); g.className="rev-grid";
+    for(var n=sec[1];n<=sec[2];n++){ (function(n){ var a=state.answers[n], ans=hasAnswer(n);
+      var c=document.createElement("button"); c.className="rev-cell"; var cls="";
+      if(showResult&&keyCount()>0){ var r=isCorrect(n); if(r===true)cls="correct"; else if(r===false&&ans)cls="wrong"; else if(ans)cls="answered"; }
+      else if(ans)cls="answered";
+      if(cls)c.classList.add(cls); if(state.flags[n])c.classList.add("flagged");
+      c.innerHTML='<span>'+n+'</span>'+(ans?'<span class="pick">'+String(a).slice(0,4)+'</span>':'<span class="pick">—</span>');
+      c.onclick=function(){ show("exam"); goTo(n-1,false); }; g.appendChild(c);
+    })(n); }
+    wrap.appendChild(g); sections.appendChild(wrap);
+  });
+  $("reviewNote").innerHTML = keyCount()>0 ? "Loaded <b>"+keyCount()+"</b> answer(s) for scoring." : "<b>No answer key loaded.</b> Add one in the ANSWER_KEY object in this file to enable automatic scoring.";
+  $("submitBtn").textContent = keyCount()>0 ? "Submit & see score" : "Submit answers";
+}
+$("submitBtn").onclick=function(){ state.submitted=true; save(); showResults(); };
+
+/* ---------- results screen ---------- */
+var HOME_URL=""; // optional: set to your site/home URL for the “More practice tests” button
+function fmtElapsed(ms){ var s=Math.max(0,Math.round(ms/1000)); var h=Math.floor(s/3600), m=Math.floor((s%3600)/60); return h>0 ? (h+"h "+m+"m") : (m+"m"); }
+function showResults(){
+  var answered=answeredCount(), flagged=Object.keys(state.flags).length;
+  var elaAns=0, mathAns=0, n;
+  for(n=1;n<=50;n++) if(hasAnswer(n)) elaAns++;
+  for(n=51;n<=100;n++) if(hasAnswer(n)) mathAns++;
+  var elapsed = state.startedAt ? (Date.now()-state.startedAt) : (state.timerOn ? (10800-state.remaining)*1000 : 0);
+  $("resTime").textContent = elapsed>0 ? fmtElapsed(elapsed) : "\u2014";
+  $("resAnswered").textContent = answered+"/"+TOTAL;
+  $("resFlagged").textContent = flagged;
+  var circ=427.3, pct, pctSub, ringColor, label, bandBg, bandColor, msg;
+  if(keyCount()>0){
+    var ec=0, mc=0;
+    for(n=1;n<=50;n++) if(isCorrect(n)) ec++;
+    for(n=51;n<=100;n++) if(isCorrect(n)) mc++;
+    var correct=ec+mc; pct=Math.round(correct/TOTAL*100); pctSub=correct+" / "+TOTAL+" correct";
+    $("resEla").textContent=ec; $("resMath").textContent=mc;
+    $("resElaTot").textContent="/ 50"; $("resMathTot").textContent="/ 50";
+    $("resElaBar").style.width=(ec/50*100)+"%"; $("resMathBar").style.width=(mc/50*100)+"%";
+    if(pct>=85){ringColor="#1F8A5B";label="Excellent";bandBg="#E7F7EE";bandColor="#1F8A5B";msg="Outstanding \u2014 you\u2019re scoring in the specialized-high-school range. Review the few you missed to lock it in.";}
+    else if(pct>=70){ringColor="#16A3DE";label="On track";bandBg="#EAF5FC";bandColor="#1488C4";msg="Solid work! You\u2019re close to target. Focus your next sessions on the lower-scoring section to push into the top range.";}
+    else if(pct>=50){ringColor="#F2A900";label="Keep building";bandBg="#FFF3D6";bandColor="#9C7A1E";msg="Good effort \u2014 review the flagged questions and the topics you missed, then try another full-length test.";}
+    else {ringColor="#D64545";label="Needs review";bandBg="#FDECEC";bandColor="#C0392B";msg="Every practice test builds the path forward. Go through your answers with a teacher and retake when ready.";}
+    $("resTitle").textContent="Your results";
+  } else {
+    pct=Math.round(answered/TOTAL*100); pctSub=answered+" / "+TOTAL+" answered";
+    $("resEla").textContent=elaAns; $("resMath").textContent=mathAns;
+    $("resElaTot").textContent="answered"; $("resMathTot").textContent="answered";
+    $("resElaBar").style.width=(elaAns/50*100)+"%"; $("resMathBar").style.width=(mathAns/50*100)+"%";
+    ringColor="#16A3DE";label="Submitted";bandBg="#EAF5FC";bandColor="#1488C4";
+    msg="Your test has been submitted and saved on this device. Once the answer key is loaded, your score and a detailed breakdown will appear here.";
+    $("resTitle").textContent="Test submitted!";
+  }
+  $("resPct").innerHTML = pct+'<span style="font-size:22px;color:var(--muted)">%</span>';
+  $("resPctSub").textContent = pctSub;
+  var ring=$("resRing"); ring.setAttribute("stroke",ringColor); ring.setAttribute("stroke-dasharray",(circ*pct/100).toFixed(1)+" "+circ);
+  var band=$("resBand"); band.style.background=bandBg; band.style.color=bandColor;
+  band.innerHTML='<span style="width:8px;height:8px;border-radius:50%;background:'+ringColor+'"></span>'+label;
+  $("resMsg").textContent=msg;
+  show("results");
+}
+$("resReviewBtn").onclick=function(){ buildReview(keyCount()>0); $("reviewTitle").textContent=keyCount()>0?"Your results":"Your answers"; show("review"); };
+$("resRetakeBtn").onclick=function(){ if(confirm("Start a fresh attempt? Your current answers will be cleared.")){ var t=state.timerOn, a=state.autoAdv; state=freshState(); state.timerOn=t; state.autoAdv=a; state.started=true; state.startedAt=Date.now(); save(); enterExam(); } };
+$("resHomeBtn").onclick=function(){ if(HOME_URL){ window.location.href=HOME_URL; } else { show("intro"); } };;
+</script>
+</body>
+</html>
