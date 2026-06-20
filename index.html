@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>SHSAT Practice Test-1 · Topway Prep</title>
+<title>SHSAT EXAM-1 · Topway Prep</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@700;900&display=swap" rel="stylesheet">
@@ -203,7 +203,7 @@ a{color:inherit}
 <section id="introScreen" class="screen active">
   <div class="intro-wrap">
     <div class="eyebrow">NYC Specialized High Schools Admissions Test</div>
-    <h1>SHSAT Practice Test-1</h1>
+    <h1>SHSAT EXAM-1</h1>
     <p class="intro-sub">Grade 8 · Online practice · Progress saved on this device</p>
     <div class="intro-meta">
       <span class="chip"><b>100</b> questions</span>
@@ -228,7 +228,7 @@ a{color:inherit}
         </div>
         <div style="position:relative;font-family:var(--display);font-weight:800;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#FFC629;margin-bottom:8px;"><span style="font-family:'Noto Sans SC',sans-serif;font-weight:900;">權威教育</span> · TOPWAY PREP</div>
         <div style="position:relative;font-family:var(--display);font-weight:900;font-size:22px;letter-spacing:-.5px;line-height:1.15;">Specialized High Schools Admissions Test</div>
-        <div style="position:relative;font-size:14px;color:#9fc4e0;margin-top:6px;font-weight:600;">Grade 8 · SHSAT Practice Test-1</div>
+        <div style="position:relative;font-size:14px;color:#9fc4e0;margin-top:6px;font-weight:600;">Grade 8 · SHSAT EXAM-1</div>
       </div>
       <div style="padding:24px 28px;">
         <div style="font-family:var(--display);font-weight:800;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#16A3DE;margin-bottom:10px;">General Directions</div>
@@ -298,7 +298,7 @@ a{color:inherit}
         <path d="M30 91 Q60 107 90 91" stroke="#FFC629" stroke-width="7" stroke-linecap="round" fill="none"></path>
       </svg>
     </div>
-    <div class="brand">SHSAT Test-1<small>Topway Practice</small></div>
+    <div class="brand">SHSAT EXAM-1<small>Topway Practice</small></div>
     <div class="seg" id="sectionSeg">
       <button data-sec="Reading" class="on">ELA 1–50</button>
       <button data-sec="Math">Math 51–100</button>
@@ -359,7 +359,7 @@ a{color:inherit}
         <div class="res-badge"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
         <div class="res-eyebrow">Test Submitted · 已提交</div>
         <h1 class="res-h1" id="resTitle">Test submitted!</h1>
-        <p class="res-sub" id="resSub">SHSAT Practice Test-1 · saved on this device</p>
+        <p class="res-sub" id="resSub">SHSAT EXAM-1 · saved on this device</p>
       </div>
       <div class="res-ringwrap">
         <div class="res-ringcirc">
@@ -409,13 +409,155 @@ a{color:inherit}
 <script src="exam-text-data.js"></script>
 <script>
 /* ============================================================
-   ANSWER_KEY: fill to enable scoring, e.g. { "1":"B", "51":"C", "100":"31/12" }.
-   Multiple choice = A/B/C/D; grid-in = the typed value as a string.
+   ANSWER_KEY: SHSAT EXAM-1 key is loaded for automatic scoring.
+   Multiple choice = A/B/C/D; multi-select answers use comma format such as C,E.
    Question images live in the exam-img/ folder (q1.jpg … q100.jpg).
    ============================================================ */
-var ANSWER_KEY = {};
+var ANSWER_KEY = {
+  "1": "B",
+  "2": "B",
+  "3": "D",
+  "4": "C,E",
+  "5": "C",
+  "6": "A",
+  "7": [
+    "Nature=B,D,E;Human=A,C",
+    "Human=A,C;Nature=B,D,E",
+    "B,D,E|A,C",
+    "A,C|B,D,E",
+    "NATURE:B,D,E;HUMAN:A,C",
+    "HUMAN:A,C;NATURE:B,D,E"
+  ],
+  "8": "D",
+  "9": "D",
+  "10": "B",
+  "11": "C",
+  "12": "A",
+  "13": "B",
+  "14": "C",
+  "15": "C",
+  "16": "B",
+  "17": "A",
+  "18": "D",
+  "19": "A",
+  "20": "D",
+  "21": "C",
+  "22": "D",
+  "23": "C",
+  "24": "D",
+  "25": "D",
+  "26": "A",
+  "27": "B",
+  "28": "A",
+  "29": "D",
+  "30": "A",
+  "31": "B",
+  "32": "C",
+  "33": "C",
+  "34": "A",
+  "35": "B",
+  "36": "C",
+  "37": "C",
+  "38": "D",
+  "39": "A",
+  "40": "B",
+  "41": "D",
+  "42": "C",
+  "43": "A",
+  "44": [
+    "D",
+    "Unfortunately"
+  ],
+  "45": "A",
+  "46": "D",
+  "47": "C",
+  "48": "C",
+  "49": "A",
+  "50": [
+    "D",
+    "Sentence 4",
+    "4"
+  ],
+  "51": "A",
+  "52": "B",
+  "53": "-4",
+  "54": "45",
+  "55": "D",
+  "56": "A",
+  "57": "A",
+  "58": "56",
+  "59": "162",
+  "60": "A,E",
+  "61": "B",
+  "62": "B",
+  "63": "D",
+  "64": "63",
+  "65": "B",
+  "66": "B",
+  "67": [
+    "|1|-|-5|",
+    "1-5",
+    "-4"
+  ],
+  "68": "A",
+  "69": "A",
+  "70": "D",
+  "71": "B",
+  "72": "B",
+  "73": "D",
+  "74": "C",
+  "75": "99",
+  "76": "D",
+  "77": [
+    "-4,28,-56",
+    "-4 28 -56",
+    "-4;28;-56"
+  ],
+  "78": "D",
+  "79": "B",
+  "80": "C",
+  "81": "C",
+  "82": [
+    "-13/3",
+    "-4 1/3",
+    "-4.3333333333"
+  ],
+  "83": "B",
+  "84": "C",
+  "85": "B",
+  "86": "B",
+  "87": [
+    "(1,3),(3,9),(4,12)",
+    "1,3;3,9;4,12",
+    "1 3 3 9 4 12"
+  ],
+  "88": "D",
+  "89": "C",
+  "90": "D",
+  "91": "C",
+  "92": "D",
+  "93": [
+    "x>=1",
+    ">=1",
+    "1,right,closed",
+    "closed ray right from 1"
+  ],
+  "94": "C",
+  "95": "A",
+  "96": "D",
+  "97": "C",
+  "98": "C",
+  "99": "A",
+  "100": [
+    "7/5",
+    "1.4"
+  ]
+};
 
-var TOTAL=100, LETTERS=["A","B","C","D"], STORE="topway_shsat_test1_v3";
+var TOTAL=100, LETTERS=["A","B","C","D"], STORE="topway_shsat_exam1_v5";
+var SPECIAL_CHOICES = { "60":["A","B","C","D","E","F"] };
+var SPECIAL_MULTI = { "60":2 };
+function choiceLetters(q){ return (SPECIAL_CHOICES[String(q.n)] || LETTERS); }
 var ETXT=(window.EXAM_TEXT)||{passages:{},ela:[]};
 var passages=ETXT.passages;
 function etFor(n){ if(n>50)return null; for(var i=0;i<ETXT.ela.length;i++){ if(ETXT.ela[i].n===n) return ETXT.ela[i]; } return null; }
@@ -432,7 +574,7 @@ var $=function(id){return document.getElementById(id);};
 var screens={intro:$("introScreen"),exam:$("examScreen"),review:$("reviewScreen"),results:$("resultsScreen")};
 function show(name){ for(var k in screens) screens[k].classList.toggle("active",k===name); window.scrollTo(0,0); }
 function hasAnswer(n){ var a=state.answers[n]; return a!==undefined&&a!==null&&a!==""; }
-function isLetter(v){ return LETTERS.indexOf(v)>=0; }
+function isLetter(v){ return /^[A-F]$/.test(String(v||"").trim().toUpperCase()); }
 function answeredCount(){ var c=0; for(var n=1;n<=TOTAL;n++) if(hasAnswer(n)) c++; return c; }
 
 /* intro */
@@ -507,8 +649,12 @@ function renderQuestion(q){
 function isSel(n,k,multi){ var c=state.answers[n]; if(c===undefined||c==="")return false; return multi?String(c).split(",").indexOf(k)>=0:c===k; }
 function buildAnswers(q){
   var box=$("answers"); box.innerHTML="";
-  var et=q.et, textMode=(q.section==="Reading"&&et&&et.type!=="image"&&et.choices.length), multi=(et&&et.type==="multi");
-  var lab=document.createElement("div"); lab.className="a-label"; lab.textContent=multi?"Select the TWO best answers":"Select your answer"; box.appendChild(lab);
+  var et=q.et;
+  var textMode=(q.section==="Reading"&&et&&et.type!=="image"&&et.choices.length);
+  var multi=(et&&et.type==="multi") || !!SPECIAL_MULTI[String(q.n)];
+  var lab=document.createElement("div"); lab.className="a-label";
+  lab.textContent=multi?"Select the TWO best answers":"Select your answer";
+  box.appendChild(lab);
   if(textMode){
     var col=document.createElement("div"); col.className="choice-col";
     et.choices.forEach(function(c){
@@ -520,30 +666,45 @@ function buildAnswers(q){
     box.appendChild(col); return;
   }
   var row=document.createElement("div"); row.className="choice-row";
-  LETTERS.forEach(function(L){
-    var sel=state.answers[q.n]===L;
+  choiceLetters(q).forEach(function(L){
+    var sel=isSel(q.n,L,multi);
     var d=document.createElement("button"); d.className="choice"+(sel?" sel":"");
     d.innerHTML='<span class="key">'+L+'</span>';
     d.onclick=function(){ setAnswer(q.n,L); }; row.appendChild(d);
   });
   box.appendChild(row);
-  if(q.section==="Math"){
+
+  var needsTyped = q.section==="Math" || (q.section==="Reading" && et && et.type==="image");
+  if(needsTyped){
     var gi=document.createElement("div"); gi.className="gridin";
     var cur=state.answers[q.n];
-    var hasText = cur!==undefined && !isLetter(cur) && cur!=="";
+    var letters=choiceLetters(q);
+    var letterSet = cur!==undefined && String(cur).split(",").every(function(x){ return letters.indexOf(x)>=0; });
+    var hasText = cur!==undefined && cur!=="" && !letterSet;
     if(hasText) gi.classList.add("sel");
-    gi.innerHTML='<label>Grid-in answer (if the question asks you to grid a number)</label>';
-    var inp=document.createElement("input"); inp.type="text"; inp.placeholder="e.g. 3/4 or 12.5";
+    gi.innerHTML='<label>'+(q.section==="Math"?'Grid-in / typed answer':'Typed answer for image or drag/drop questions')+'</label>';
+    var inp=document.createElement("input"); inp.type="text";
+    inp.placeholder = q.section==="Math" ? "e.g. 3/4 or 12.5" : "e.g. D, Sentence 4, or Nature=B,D,E;Human=A,C";
     inp.value = hasText ? cur : "";
-    inp.oninput=function(){ var v=inp.value.trim(); if(v===""){ if(!isLetter(state.answers[q.n])) delete state.answers[q.n]; } else { state.answers[q.n]=v; } save(); refreshRail(); gi.classList.toggle("sel",v!==""); document.querySelectorAll("#answers .choice").forEach(function(c){c.classList.remove("sel");}); };
+    inp.oninput=function(){
+      var v=inp.value.trim();
+      if(v===""){
+        var a=state.answers[q.n];
+        var isButtonAnswer = a!==undefined && String(a).split(",").every(function(x){ return letters.indexOf(x)>=0; });
+        if(!isButtonAnswer) delete state.answers[q.n];
+      } else { state.answers[q.n]=v; }
+      save(); refreshRail(); gi.classList.toggle("sel",v!=="");
+      document.querySelectorAll("#answers .choice").forEach(function(c){c.classList.remove("sel");});
+    };
     gi.appendChild(inp); box.appendChild(gi);
   }
 }
 function setAnswer(n,k){
-  var q=Q[n-1], multi=(q.et&&q.et.type==="multi");
+  var q=Q[n-1], multi=(q.et&&q.et.type==="multi") || !!SPECIAL_MULTI[String(n)];
   if(multi){
     var cur=state.answers[n], arr=cur?String(cur).split(","):[]; var idx=arr.indexOf(k);
-    if(idx>=0) arr.splice(idx,1); else { if(arr.length>=2) arr.shift(); arr.push(k); }
+    var maxPick = SPECIAL_MULTI[String(n)] || 2;
+    if(idx>=0) arr.splice(idx,1); else { if(arr.length>=maxPick) arr.shift(); arr.push(k); }
     if(arr.length) state.answers[n]=arr.sort().join(","); else delete state.answers[n];
   } else {
     if(state.answers[n]===k) delete state.answers[n]; else state.answers[n]=k;
@@ -565,7 +726,7 @@ document.addEventListener("keydown",function(e){
   if(!screens.exam.classList.contains("active"))return;
   if(e.target.tagName==="INPUT")return;
   var k=(e.key||"").toUpperCase();
-  if(LETTERS.indexOf(k)>=0){ setAnswer(state.idx+1,k); }
+  if(choiceLetters(Q[state.idx]).indexOf(k)>=0){ setAnswer(state.idx+1,k); }
   else if(e.key==="ArrowRight"){ goTo(state.idx+1); }
   else if(e.key==="ArrowLeft"){ goTo(state.idx-1); }
   else if(k==="F"){ $("flagBtn").click(); }
@@ -589,8 +750,41 @@ $("toReviewBtn").onclick=function(){ toReview(false); };
 function toReview(timeUp){ show("review"); buildReview(false); if(timeUp){ $("reviewTitle").textContent="Time’s up — please submit"; } }
 $("backToExamBtn").onclick=function(){ show("exam"); goTo(state.idx,false); };
 function keyCount(){ return Object.keys(ANSWER_KEY).length; }
-function norm(v){ return String(v).trim().toUpperCase().replace(/\s+/g,""); }
-function isCorrect(n){ var k=ANSWER_KEY[n]; if(k===undefined)return null; var a=state.answers[n]; if(a===undefined||a==="")return false; return norm(a)===norm(k); }
+function norm(v){
+  return String(v==null?"":v).trim().toUpperCase()
+    .replace(/[–—−]/g,"-")
+    .replace(/[，]/g,",").replace(/[；]/g,";")
+    .replace(/\s+/g,"");
+}
+function sortLetterSet(v){
+  var s=norm(v);
+  if(/^[A-F](,[A-F])+$/.test(s)) return s.split(",").sort().join(",");
+  if(/^[A-F]{2,6}$/.test(s)) return s.split("").sort().join(",");
+  return null;
+}
+function parseNumber(v){
+  var raw=String(v==null?"":v).trim().replace(/[–—−]/g,"-").replace(/,/g,"").replace(/\$/g,"").replace(/[A-Za-z]/g,"").trim();
+  var m=raw.match(/^([-+]?)(\d+)\s+(\d+)\/(\d+)$/);
+  if(m){ var sign=m[1]==="-"?-1:1, whole=+m[2], num=+m[3], den=+m[4]; if(den) return sign*(whole+num/den); }
+  m=raw.match(/^([-+]?\d+)\/(\d+)$/); if(m&&+m[2]) return (+m[1])/(+m[2]);
+  if(/^[-+]?\d*\.?\d+$/.test(raw)) return +raw;
+  return null;
+}
+function sameAnswer(a,k){
+  var sa=sortLetterSet(a), sk=sortLetterSet(k);
+  if(sa&&sk) return sa===sk;
+  if(norm(a)===norm(k)) return true;
+  var na=parseNumber(a), nk=parseNumber(k);
+  if(na!==null&&nk!==null&&Math.abs(na-nk)<0.000001) return true;
+  return false;
+}
+function isCorrect(n){
+  var k=ANSWER_KEY[n]; if(k===undefined)return null;
+  var a=state.answers[n]; if(a===undefined||a==="")return false;
+  var keys=Array.isArray(k)?k:[k];
+  for(var i=0;i<keys.length;i++){ if(sameAnswer(a,keys[i])) return true; }
+  return false;
+}
 function buildReview(showResult){
   var answered=answeredCount(), flagged=Object.keys(state.flags).length, unanswered=TOTAL-answered;
   function card(v,l,cls){return '<div class="scard '+(cls||"")+'"><div class="v">'+v+'</div><div class="l">'+l+'</div></div>';}
@@ -614,7 +808,7 @@ function buildReview(showResult){
     })(n); }
     wrap.appendChild(g); sections.appendChild(wrap);
   });
-  $("reviewNote").innerHTML = keyCount()>0 ? "Loaded <b>"+keyCount()+"</b> answer(s) for scoring." : "<b>No answer key loaded.</b> Add one in the ANSWER_KEY object in this file to enable automatic scoring.";
+  $("reviewNote").innerHTML = keyCount()>0 ? "Loaded <b>"+keyCount()+"</b> answer(s) for automatic scoring." : "<b>No answer key loaded.</b> Add one in the ANSWER_KEY object in this file to enable automatic scoring.";
   $("submitBtn").textContent = keyCount()>0 ? "Submit & see score" : "Submit answers";
 }
 $("submitBtn").onclick=function(){ state.submitted=true; save(); showResults(); };
